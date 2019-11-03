@@ -40,7 +40,7 @@ const ModalStack = createStackNavigator({
   },
 });
 
-const RenCodeApp = createStackNavigator({
+const TikiApp = createStackNavigator({
   SplashScreen: {
     screen: SplashScreen,
     navigationOptions: {gesturesEnabled: false, header: null},
@@ -54,7 +54,7 @@ const RenCodeApp = createStackNavigator({
   },
 });
 
-export default createAppContainer(RenCodeApp);
+export default createAppContainer(TikiApp);
 
 export const AppAction = {
   getResetAction: screenName => {

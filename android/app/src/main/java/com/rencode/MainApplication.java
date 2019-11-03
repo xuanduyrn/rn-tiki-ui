@@ -1,4 +1,4 @@
-package com.rencode;
+package com.tiki;
 
 import android.app.Application;
 import android.content.Context;
