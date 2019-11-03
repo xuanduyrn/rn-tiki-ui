@@ -1,7 +1,7 @@
 import React from 'react';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import styled from 'styled-components';
-import {HomeTabNavigation} from './HomeTabNavigation';
+import Home from '../screen/Home';
 import Category from '../screen/Category';
 import Search from '../screen/Search';
 import Notifications from '../screen/Notifications';
@@ -12,35 +12,39 @@ import AppStyles from '../config/styles';
 
 const HomeTabIcon = ({tintColor}) => (
   <Wrapper>
-    <TabIcon name="home" tintColor={tintColor} type="FontAwesomeIcon" />
+    <TabIcon name="home" tintColor={tintColor} type="home" />
     {/* <WrapperText>Trang chủ</WrapperText> */}
   </Wrapper>
 );
 const CategoryTabIcon = ({tintColor}) => (
   <Wrapper>
-    <TabIcon name="history" tintColor={tintColor} type="MaterialIcons" />
+    <TabIcon name="grid" tintColor={tintColor} type="category" />
   </Wrapper>
 );
 const SearchTabIcon = ({tintColor}) => (
   <Wrapper>
-    <TabIcon name="ios-gift" tintColor={tintColor} type="IoniconsIcons" />
+    <TabIcon name="ios-search" tintColor={tintColor} type="search" />
   </Wrapper>
 );
 const NotificationTabIcon = ({tintColor}) => (
   <Wrapper>
-    <TabIcon name="infocirlce" tintColor={tintColor} type="AntDesignFAQ" />
+    <TabIcon 
+      name="md-notifications"
+      tintColor={tintColor}
+      type="notifications"
+    />
   </Wrapper>
 );
 const UserProfileTabIcon = ({tintColor}) => (
   <Wrapper>
-    <TabIcon name="infocirlce" tintColor={tintColor} type="AntDesignFAQ" />
+    <TabIcon name="user" tintColor={tintColor} type="userProfile" />
   </Wrapper>
 );
 
 export const BottomTabNavigation = createBottomTabNavigator(
   {
-    HomeScreen: {
-      screen: HomeTabNavigation,
+    Home: {
+      screen: Home,
       navigationOptions: {
         header: null,
         tabBarIcon: HomeTabIcon,

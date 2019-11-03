@@ -1,17 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
-import HeaderNavigation from '../../components/Headers/HeaderNavigation';
+import {View, Text} from 'react-native';
 
 const Search = () => {
   return (
-    <WrapperContainer>
-      <HeaderNavigation title="Search" />
-    </WrapperContainer>
+    <View>
+      <Text>Search</Text>
+    </View>
   );
 };
 
 export default Search;
-
-const WrapperContainer = styled.View`
-  flex: 1px;
-`;

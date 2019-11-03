@@ -1,17 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
-import HeaderNavigation from '../../components/Headers/HeaderNavigation';
+import {View, Text} from 'react-native';
 
 const Notifications = () => {
   return (
-    <WrapperContainer>
-      <HeaderNavigation title="Notifications" />
-    </WrapperContainer>
+    <View>
+      <Text>Notifications</Text>
+    </View>
   );
 };
 
 export default Notifications;
-
-const WrapperContainer = styled.View`
-  flex: 1px;
-`;

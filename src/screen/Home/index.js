@@ -1,17 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
-import HeaderNavigation from '../../components/Headers/HeaderNavigation';
+import {View, Text} from 'react-native';
 
-const HomePage = () => {
+const Home = () => {
   return (
-    <WrapperContainer>
-      <HeaderNavigation title="Home" />
-    </WrapperContainer>
+    <View>
+      <Text>Home</Text>
+    </View>
   );
 };
 
-export default HomePage;
-
-const WrapperContainer = styled.View`
-  flex: 1px;
-`;
+export default Home;
