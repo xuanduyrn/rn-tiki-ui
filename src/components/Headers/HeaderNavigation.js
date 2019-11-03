@@ -1,37 +1,65 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
-import {Left, Right, Button, Icon, Title} from 'native-base';
+import styled from 'styled-components';
+import {Button, Item, Input, Header, Body, Title} from 'native-base';
+import IconSearch from 'react-native-vector-icons/Ionicons';
+import IconCart from 'react-native-vector-icons/Feather';
+import IconArrowBack from 'react-native-vector-icons/Ionicons';
+import AppStyles from '../../config/styles';
 
-const HeaderNavigation = ({iconLeft, title, iconRight, onPress}) => {
+const HeaderNavigation = ({back, headerName, cart, placeholder}) => {
   return (
-    <View style={styles.topBarBg}>
-      <Left>
-        {iconLeft ? (
-          <Button transparent onPress={onPress}>
-            <Icon name={iconLeft} style={{color: 'white'}} />
-          </Button>
-        ) : null}
-      </Left>
-      <Title>{title}</Title>
-      <Right>
-        {iconRight ? (
-          <Button transparent>
-            <Icon name={iconRight} />
-          </Button>
-        ) : null}
-      </Right>
-    </View>
+    <HeaderWrapper>
+      {back ? (
+        <Button transparent style={{width: 30, marginRight: 10}}>
+          <IconArrowBack
+            size={25}
+            name="ios-arrow-back"
+            style={{color: AppStyles.colors.white}}
+          />
+        </Button>
+      ) : null}
+      <Body>
+        {headerName ? (
+          <Title numberOfLines={1}>{headerName}</Title>
+        ) : (
+          <ItemSearchGroup>
+            <IconSearch
+              size={20}
+              active
+              name="ios-search"
+              style={{color: AppStyles.colors.lightGrey, padding: 2}}
+            />
+            <SearchInput placeholder={placeholder} />
+          </ItemSearchGroup>
+        )}
+      </Body>
+      {cart ? (
+        <Button transparent style={{width: 40, marginLeft: 10}}>
+          <IconCart
+            size={25}
+            name="shopping-cart"
+            style={{color: AppStyles.colors.white}}
+          />
+        </Button>
+      ) : null}
+    </HeaderWrapper>
   );
 };
 
 export default HeaderNavigation;
 
-const styles = StyleSheet.create({
-  topBarBg: {
-    width: '100%',
-    height: 55,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-});
+const HeaderWrapper = styled(Header)`
+  background-color: ${AppStyles.colors.lightBlueTiki};
+`;
+
+const ItemSearchGroup = styled(Item)`
+  background-color: ${AppStyles.colors.white};
+  height: 40px;
+  padding: 5px;
+  border-radius: 2px;
+`;
+
+const SearchInput = styled(Input)`
+  height: 40px;
+  width: 100%;
+`;

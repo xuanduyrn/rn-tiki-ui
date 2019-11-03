@@ -28,7 +28,7 @@ const SearchTabIcon = ({tintColor}) => (
 );
 const NotificationTabIcon = ({tintColor}) => (
   <Wrapper>
-    <TabIcon 
+    <TabIcon
       name="md-notifications"
       tintColor={tintColor}
       type="notifications"
@@ -73,7 +73,7 @@ export const BottomTabNavigation = createBottomTabNavigator(
       navigationOptions: {
         header: null,
         tabBarIcon: NotificationTabIcon,
-        tabBarLabel: 'Hướng dẫn',
+        tabBarLabel: 'Thông báo',
       },
     },
     UserProfile: {
@@ -81,14 +81,14 @@ export const BottomTabNavigation = createBottomTabNavigator(
       navigationOptions: {
         header: null,
         tabBarIcon: UserProfileTabIcon,
-        tabBarLabel: 'Hướng dẫn',
+        tabBarLabel: 'Cá nhân',
       },
     },
   },
   {
     tabBarOptions: {
       showLabel: true,
-      activeTintColor: AppStyles.colors.primaryGradientStart,
+      activeTintColor: AppStyles.colors.lightBlueTiki,
       activeBackgroundColor: '#fff',
       inactiveBackgroundColor: '#fff',
       inactiveTintColor: AppStyles.colors.lightGreyColor,

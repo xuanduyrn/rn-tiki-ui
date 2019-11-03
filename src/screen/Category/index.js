@@ -1,12 +1,17 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import styled from 'styled-components';
+import HeaderNavigation from '../../components/Headers/HeaderNavigation';
 
 const Category = () => {
   return (
-    <View>
-      <Text>Category</Text>
-    </View>
+    <WrapperContainer>
+      <HeaderNavigation cart={true} placeholder="Danh mục sản phẩm" />
+    </WrapperContainer>
   );
 };
 
 export default Category;
+
+const WrapperContainer = styled.View`
+  flex: 1px;
+`;

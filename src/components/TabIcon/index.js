@@ -3,7 +3,7 @@ import Home from 'react-native-vector-icons/FontAwesome';
 import UserProfile from 'react-native-vector-icons/FontAwesome';
 import Search from 'react-native-vector-icons/Ionicons';
 import Notifications from 'react-native-vector-icons/Ionicons';
-import Category from 'react-native-vector-icons/Entypo'
+import Category from 'react-native-vector-icons/Entypo';
 
 const TabIcon = ({name, tintColor, type}) => {
   switch (type) {

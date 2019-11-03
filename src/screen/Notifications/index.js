@@ -1,12 +1,17 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import styled from 'styled-components';
+import HeaderNavigation from '../../components/Headers/HeaderNavigation';
 
 const Notifications = () => {
   return (
-    <View>
-      <Text>Notifications</Text>
-    </View>
+    <WrapperContainer>
+      <HeaderNavigation cart={true} headerName="Thông báo" />
+    </WrapperContainer>
   );
 };
 
 export default Notifications;
+
+const WrapperContainer = styled.View`
+  flex: 1px;
+`;

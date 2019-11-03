@@ -1,12 +1,17 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import styled from 'styled-components';
+import HeaderNavigation from '../../components/Headers/HeaderNavigation';
 
 const UserProfile = () => {
   return (
-    <View>
-      <Text>Search</Text>
-    </View>
+    <WrapperContainer>
+      <HeaderNavigation cart={true} headerName="Cá nhân" />
+    </WrapperContainer>
   );
 };
 
 export default UserProfile;
+
+const WrapperContainer = styled.View`
+  flex: 1px;
+`;
