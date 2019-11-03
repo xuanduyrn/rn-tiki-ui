@@ -4,7 +4,8 @@ import {
   NavigationActions,
   StackActions,
 } from 'react-navigation';
-//Auth Screen
+//Splash Screen
+import SplashScreen from '../screen/Splash';
 //
 import {YellowBox} from 'react-native';
 import {BottomTabNavigation} from './BottomTabNavigation';
@@ -40,6 +41,10 @@ const ModalStack = createStackNavigator({
 });
 
 const RenCodeApp = createStackNavigator({
+  SplashScreen: {
+    screen: SplashScreen,
+    navigationOptions: {gesturesEnabled: false, header: null},
+  },
   MainScreen: {
     screen: ModalStack,
     navigationOptions: {
