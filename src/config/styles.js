@@ -43,6 +43,7 @@ const AppStyles = {
     lightGreyBold: '#D9D8DB',
     PRIMARY_BOLD: '#434BC8',
     lightBlueTiki: '#1ba8ff',
+    lightBlack: '#393939',
   },
   fonts: {
     FONT_REGULAR: 'Roboto-Regular',
