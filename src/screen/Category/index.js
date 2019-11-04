@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Image, ScrollView} from 'react-native';
+import {Image, ScrollView, View} from 'react-native';
 import HeaderNavigation from '../../components/Headers/HeaderNavigation';
 import AppStyles from '../../config/styles';
 
@@ -19,7 +19,9 @@ const Category = ({navigation}) => {
               <ProductCategory>
                 <Image source={product.image} style={{width: 50, height: 50}} />
               </ProductCategory>
-              <TextSmall>{product.title}</TextSmall>
+              <View style={{height: 20}}>
+                <TextSmall>{product.title}</TextSmall>
+              </View>
             </WrapperCategory>
           ))}
         </WrapperContent>
@@ -41,6 +43,7 @@ const WrapperContent = styled.View`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 15px;
 `;
 
 const WrapperCategory = styled.TouchableOpacity`
@@ -54,7 +57,6 @@ const WrapperCategory = styled.TouchableOpacity`
 const ProductCategory = styled.View`
   width: 70px;
   height: 70px;
-  border-radius: 5px;
   justify-content: center;
   align-items: center;
 `;
