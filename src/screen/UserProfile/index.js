@@ -32,8 +32,8 @@ const UserProfile = () => {
           </LeftAccount>
           <BodyAccount>
             <TextName numberOfLines={1}>Phạm Xuân Duy</TextName>
-            <TexSmallt numberOfLines={1}>Tài khoản Facebook</TexSmallt>
-            <TexSmallt numberOfLines={1}>Thành viên từ: 28/03/2017</TexSmallt>
+            <TextSmall numberOfLines={1}>Tài khoản Facebook</TextSmall>
+            <TextSmall numberOfLines={1}>Thành viên từ: 28/03/2017</TextSmall>
           </BodyAccount>
           <RightAccount>
             <Ionicons
@@ -264,7 +264,7 @@ const TextName = styled(Text)`
   color: ${AppStyles.colors.black};
   font-family: ${AppStyles.fonts.primaryRegular};
 `;
-const TexSmallt = styled(Text)`
+const TextSmall = styled(Text)`
   font-size: 13px;
   color: #848484;
   font-family: ${AppStyles.fonts.primaryRegular};
