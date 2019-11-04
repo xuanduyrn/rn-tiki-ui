@@ -10,7 +10,7 @@ const AppStyles = {
     green: 'green',
     onlineGreen: '#2ecc71',
     lightWhite: '#f9f9f9',
-    LIGHT_GRAY: '#fcfcfc',
+    LIGHT_GRAY: '#F1F1F1',
     GRAY: '#dddddd',
     BLACK_GRAY: '#333',
     ORANGE: '#eb4e2e',
