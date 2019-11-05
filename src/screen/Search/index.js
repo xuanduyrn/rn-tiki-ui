@@ -2,7 +2,7 @@ import React from 'react';
 import {ScrollView} from 'react-native';
 import styled from 'styled-components';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Feather from 'react-native-vector-icons/Feather';
 import {List, ListItem, Text} from 'native-base';
 import HeaderNavigation from '../../components/Headers/HeaderNavigation';
 import {product} from '../../mock-data/category';
@@ -50,14 +50,14 @@ const Search = ({navigation}) => {
         <ScrollView>
           <List>
             {dataProduct.length > 0 ? (
-              dataProduct.map(item => (
+              dataProduct.slice(0, 5).map(item => (
                 <ListItem
                   key={item.id}
                   style={{justifyContent: 'space-between'}}
                   onPress={() => navigation.navigate('DetailProduct')}>
-                  <Text>{item.title}</Text>
-                  <Ionicons
-                    name="ios-arrow-forward"
+                  <Text numberOfLines={1} style={{width: '90%'}}>{item.title}</Text>
+                  <Feather
+                    name="arrow-up-left"
                     size={20}
                     color={AppStyles.colors.lightGrey}
                   />
