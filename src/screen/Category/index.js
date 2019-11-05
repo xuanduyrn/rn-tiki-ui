@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Image, ScrollView, View} from 'react-native';
+import {ScrollView} from 'react-native';
 import HeaderNavigation from '../../components/Headers/HeaderNavigation';
-import AppStyles from '../../config/styles';
+import CategoryCard from '../../components/Cards/CategoryCard';
 
+import AppStyles from '../../config/styles';
 import {productCategory} from '../../mock-data/category';
 
 const Category = ({navigation}) => {
@@ -17,16 +18,17 @@ const Category = ({navigation}) => {
       <ScrollView>
         <WrapperContent>
           {productCategory.map(product => (
-            <WrapperCategory
+            <CategoryCard
+              widthContainer={`${100 / 3}%`}
+              widthCard={70}
+              heightCard={70}
+              imageStyle={{width: 50, height: 50}}
+              numberOfLines={2}
               key={product.id}
-              onPress={() => navigation.navigate('Search')}>
-              <ProductCategory>
-                <Image source={product.image} style={{width: 50, height: 50}} />
-              </ProductCategory>
-              <View style={{height: 20}}>
-                <TextSmall>{product.title}</TextSmall>
-              </View>
-            </WrapperCategory>
+              productImage={product.image}
+              productTitle={product.title}
+              onPress={() => navigation.navigate('Search')}
+            />
           ))}
         </WrapperContent>
       </ScrollView>
@@ -48,26 +50,4 @@ const WrapperContent = styled.View`
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 15px;
-`;
-
-const WrapperCategory = styled.TouchableOpacity`
-  flex-direction: column;
-  width: ${100 / 3}%;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-`;
-
-const ProductCategory = styled.View`
-  width: 70px;
-  height: 70px;
-  justify-content: center;
-  align-items: center;
-`;
-
-const TextSmall = styled.Text`
-  font-size: 13px;
-  color: #848484;
-  font-family: ${AppStyles.fonts.primaryRegular};
-  text-align: center;
 `;
