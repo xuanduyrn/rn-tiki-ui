@@ -9,7 +9,11 @@ import {productCategory} from '../../mock-data/category';
 const Category = ({navigation}) => {
   return (
     <WrapperContainer>
-      <HeaderNavigation cart={true} placeholder="Danh mục sản phẩm" />
+      <HeaderNavigation
+        cart={true}
+        placeholder="Danh mục sản phẩm"
+        onTouchStart={() => navigation.navigate('Search')}
+      />
       <ScrollView>
         <WrapperContent>
           {productCategory.map(product => (

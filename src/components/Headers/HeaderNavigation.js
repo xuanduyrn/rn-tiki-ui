@@ -6,11 +6,22 @@ import IconCart from 'react-native-vector-icons/Feather';
 import IconArrowBack from 'react-native-vector-icons/Ionicons';
 import AppStyles from '../../config/styles';
 
-const HeaderNavigation = ({back, headerName, cart, placeholder}) => {
+const HeaderNavigation = ({
+  back,
+  headerName,
+  cart,
+  placeholder,
+  onPressGoBack,
+  onTouchStart,
+  onPressCart,
+}) => {
   return (
     <HeaderWrapper>
       {back ? (
-        <Button transparent style={{width: 30, marginRight: 10}}>
+        <Button
+          transparent
+          style={{width: 30, marginRight: 10}}
+          onPress={onPressGoBack}>
           <IconArrowBack
             size={25}
             name="ios-arrow-back"
@@ -29,12 +40,18 @@ const HeaderNavigation = ({back, headerName, cart, placeholder}) => {
               name="ios-search"
               style={{color: AppStyles.colors.lightGrey, padding: 2}}
             />
-            <SearchInput placeholder={placeholder} />
+            <SearchInput
+              placeholder={placeholder}
+              onTouchStart={onTouchStart}
+            />
           </ItemSearchGroup>
         )}
       </Body>
       {cart ? (
-        <Button transparent style={{width: 40, marginLeft: 10}}>
+        <Button
+          transparent
+          style={{width: 40, marginLeft: 10}}
+          onPress={onPressCart}>
           <IconCart
             size={25}
             name="shopping-cart"
