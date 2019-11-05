@@ -54,7 +54,7 @@ const Notifications = () => {
         </TabsContainer>
         <TabsContents>
           {dataNotify.map(item => (
-            <List>
+            <List key={item.id}>
               <ListItem>
                 <Left>
                   <Image source={item.icon} style={{width: 40, height: 40}} />
