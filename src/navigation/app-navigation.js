@@ -7,6 +7,7 @@ import {
 //Splash Screen
 import SplashScreen from '../screen/Splash';
 import Auth from '../screen/Auth';
+import DetailProduct from '../screen/DetailProduct';
 //
 import {YellowBox} from 'react-native';
 import {BottomTabNavigation} from './BottomTabNavigation';
@@ -55,6 +56,12 @@ const TikiApp = createStackNavigator({
   },
   Auth: {
     screen: Auth,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  DetailProduct: {
+    screen: DetailProduct,
     navigationOptions: {
       header: null,
     },

@@ -28,7 +28,10 @@ const HeaderHomePage = ({onTouchStart}) => {
           name="ios-search"
           style={{color: AppStyles.colors.lightGrey, padding: 2}}
         />
-        <SearchInput placeholder={'placeholder'} onTouchStart={onTouchStart} />
+        <SearchInput
+          placeholder={'Bạn cần tìm gì hôm nay'}
+          onTouchStart={onTouchStart}
+        />
       </ItemSearchGroup>
     </WrapperContainer>
   );

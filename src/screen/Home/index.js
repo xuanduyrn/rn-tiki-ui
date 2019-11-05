@@ -44,7 +44,7 @@ const Home = ({navigation}) => {
 
   return (
     <WrapperContainer>
-      <HeaderHome onTouchStart={() => navigation.navigate('Search')}/>
+      <HeaderHome onTouchStart={() => navigation.navigate('Search')} />
       <ScrollView>
         <CategoryList>
           {categoryGrid.map((item, index) => (

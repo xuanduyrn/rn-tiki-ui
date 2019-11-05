@@ -14,6 +14,7 @@ const HeaderNavigation = ({
   onPressGoBack,
   onTouchStart,
   onPressCart,
+  onChangeText,
 }) => {
   return (
     <HeaderWrapper>
@@ -42,6 +43,7 @@ const HeaderNavigation = ({
             />
             <SearchInput
               placeholder={placeholder}
+              onChangeText={text => onChangeText(text)}
               onTouchStart={onTouchStart}
             />
           </ItemSearchGroup>
