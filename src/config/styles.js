@@ -22,7 +22,7 @@ const AppStyles = {
     BG_BUTTON_ACTIVE: '#3497FD',
     TEXT_BTN_INACTIVE: '#7D88A1',
     PLACEHOLDER_TEXT: '#B4BBC9',
-    ERROR: '#cc0000',
+    ERROR: '#ff424e',
     TRANSPARENT: 'transparent',
     primary: '#555CC4',
     primaryLight: '#829BF8',

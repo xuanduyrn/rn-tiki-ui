@@ -18,23 +18,40 @@ import {
 
 import AppStyles from '../../config/styles';
 
-const UserProfile = () => {
+const UserProfile = ({navigation}) => {
+  const [isAuth, setIsAuth] = React.useState(false);
+
+  const handleAccount = () => {
+    if (isAuth) {
+      navigation.navigate('Auth');
+    }
+  };
+
   return (
     <WrapperContainer>
       <HeaderNavigation cart={true} headerName="Cá nhân" />
       <WrapperContent>
-        <WrapperAccount>
+        <WrapperAccount onPress={handleAccount}>
           <LeftAccount>
             <Image
               source={require('../../../assets/images/avatar-user.png')}
               style={{width: 50, height: 50}}
             />
           </LeftAccount>
-          <BodyAccount>
-            <TextName numberOfLines={1}>Phạm Xuân Duy</TextName>
-            <TextSmall numberOfLines={1}>Tài khoản Facebook</TextSmall>
-            <TextSmall numberOfLines={1}>Thành viên từ: 28/03/2017</TextSmall>
-          </BodyAccount>
+          {!isAuth ? (
+            <BodyAccount>
+              <TextName numberOfLines={1}>Phạm Xuân Duy</TextName>
+              <TextSmall numberOfLines={1}>Tài khoản Facebook</TextSmall>
+              <TextSmall numberOfLines={1}>Thành viên từ: 28/03/2017</TextSmall>
+            </BodyAccount>
+          ) : (
+            <BodyAccount>
+              <TextSmall>Welcome to Tiki</TextSmall>
+              <TextName style={{color: AppStyles.colors.lightBlueTiki}}>
+                Đăng nhập/Đăng ký
+              </TextName>
+            </BodyAccount>
+          )}
           <RightAccount>
             <Ionicons
               name="ios-arrow-forward"
@@ -190,9 +207,13 @@ const UserProfile = () => {
             </ListItem>
           ))}
         </WrapperList>
-        <ButtonLogOut>
-          <Text style={{color: AppStyles.colors.lightBlueTiki}}>Đăng xuất</Text>
-        </ButtonLogOut>
+        {!isAuth ? (
+          <ButtonLogOut onPress={() => setIsAuth(true)}>
+            <Text style={{color: AppStyles.colors.lightBlueTiki}}>
+              Đăng xuất
+            </Text>
+          </ButtonLogOut>
+        ) : null}
       </WrapperContent>
     </WrapperContainer>
   );
@@ -204,7 +225,7 @@ const WrapperContainer = styled.View`
   flex: 1px;
 `;
 
-const WrapperAccount = styled.View`
+const WrapperAccount = styled.TouchableOpacity`
   width: 100%;
   justify-content: space-between;
   align-items: center;

@@ -6,6 +6,7 @@ import {
 } from 'react-navigation';
 //Splash Screen
 import SplashScreen from '../screen/Splash';
+import Auth from '../screen/Auth';
 //
 import {YellowBox} from 'react-native';
 import {BottomTabNavigation} from './BottomTabNavigation';
@@ -49,6 +50,12 @@ const TikiApp = createStackNavigator({
     screen: ModalStack,
     navigationOptions: {
       gesturesEnabled: false,
+      header: null,
+    },
+  },
+  Auth: {
+    screen: Auth,
+    navigationOptions: {
       header: null,
     },
   },
